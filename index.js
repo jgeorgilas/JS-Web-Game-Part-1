@@ -1,4 +1,3 @@
-
     const newImage = (source, position, left, bottom) => {
         let imgObject = document.createElement('img')
         imgObject.src = source
