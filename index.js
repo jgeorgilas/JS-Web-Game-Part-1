@@ -1,22 +1,33 @@
-    const newImage = (source, position, left, bottom) => {
-        let imgObject = document.createElement('img')
-        imgObject.src = source
-        imgObject.style.position = position
-        imgObject.style.left = left
-        imgObject.style.bottom = bottom
-        document.body.append(imgObject)
-        &&
-        object.addEventListener('dblclick', () => {
-                object.remove()
-            })
-        }
-    
-newImage('assets/green-character.gif','fixed','100px','100px')    
-newImage('assets/tree.png','fixed','200px','300px')
-newImage('assets/pillar.png','fixed','350px','100px')
-newImage('assets/crate.png','fixed','150px','200px')
-newImage('assets/well.png','fixed','500px','425px')
-newImage('assets/shield.png','fixed','165px','185px')
-newImage('assets/staff.png','fixed','600px','100px')
+function newImage(source, left, bottom){
+    let object = document.createElement('img')
+    object.src = source
+    object.style.position = 'fixed'
+    object.style.left = left + 'px'
+    object.style.bottom = bottom + 'px'
+    document.body.append(object)
+    return object
+}
 
-/*testing my git repo/*
+function newItem(url, left, bottom){
+    let item = newImage(url, left, bottom)
+}
+
+newImage('assets/green-character.gif', 100, 100)
+newImage('assets/tree.png', 200, 300)
+newImage('assets/pillar.png', 350, 100)
+newImage('assets/pine-tree.png', 450, 200)
+newImage('assets/crate.png', 150, 200)
+newImage('assets/well.png', 500, 425)
+newImage('assets/sheild.png', 165, 185)
+newImage('assets/staff.png', 600, 100)
+
+let sword = document.createElement('img')
+sword.src = 'assets/sword.png'
+sword.position = 'fixed'
+sword.left = '500px'
+sword.bottom = '405px'
+document.body.append(sword)
+
+sword.addEventListener('dblclick', function(){
+    sword.remove()
+})
